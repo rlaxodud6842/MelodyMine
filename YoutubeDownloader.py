@@ -1,6 +1,5 @@
 import os
 import time
-
 import yt_dlp
 
 class YotubeDownLoader():
@@ -35,8 +34,7 @@ class YotubeDownLoader():
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             ydl.download([URL])
     def set_path(self):
-        path = os.path.join(self.path, '%(title)s')
-        path = os.path.join(path, '%(title)s.%(ext)s')
+        path = os.path.join(self.path, '%(title)s.%(ext)s')
         return path
     def get_url(self):
         URL = input("Put the URL what you want : ")
@@ -44,8 +42,6 @@ class YotubeDownLoader():
     def downloading_audio(self,url_arr):
         for URL in url_arr:
             self.download_audio(URL)
-            time.sleep(10)
     def downloading_video(self,url_arr):
         for URL in url_arr:
             self.download_video(URL)
-            time.sleep(10)
