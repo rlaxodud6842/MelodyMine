@@ -13,6 +13,12 @@
  
 ## 실행방법
 + `python ./main.py`
+
++ 1 : Type chennel and name
++ 2 : Stop type chennel and start scraping
+
++ 1을 선택시 -> 채널 ID와 이름을 입력받는다.
++ 2를 선택시 -> 위 선택한 채널을 기반으로 스크랩을 시작한다.
  
 ## TODO
 + 여러 채널 스크랩 디버깅
