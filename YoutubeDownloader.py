@@ -36,9 +36,6 @@ class YotubeDownLoader():
     def set_path(self):
         path = os.path.join(self.path, '%(title)s.%(ext)s')
         return path
-    def get_url(self):
-        URL = input("Put the URL what you want : ")
-        return URL
     def downloading_audio(self,url_arr):
         for URL in url_arr:
             self.download_audio(URL)

@@ -10,10 +10,10 @@ class Scraper():
         self.input_name()
 
     def input_chennel(self):
-        self.chennel = input("Type the chennel ID that you want to scrap")
+        self.chennel = input("Type the chennel ID that you want to scrap : ")
 
     def input_name(self):
-        self.name = input("Type the NAME that you want to scrap")
+        self.name = input("Type the NAME that you want to scrap : ")
 
     def get_name(self):
         return self.name

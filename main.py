@@ -3,14 +3,17 @@ import YoutubeDownloader
 import YoutubeScraper
 import ScrapterController
 
-def menu():
+def setup():
+    GET_INFO = 1
+    QUIT = 2
+    
     while(True):
-        user_select = input("If you type 'Q', scraping is start")
-        if user_select != "Q" or user_select != "q":
+        user_select = int(input("1 : Type chennel and name \n2 : Stop type chennel and start scraping \n"))
+        if user_select == GET_INFO:
             YS = YoutubeScraper.Scraper()
             SC.add_scrapter(YS)
-        else:
-            return SC.get_scrapter_list()
+        elif user_select == QUIT:
+            break
 
 def scraping():
     scrapter_list = SC.get_scrapter_list()
@@ -21,12 +24,12 @@ def scraping():
             # YD.downloading_video(new_url)
             YD.downloading_audio(new_url)
         else:
-            print("No new Vedio")
-
+            print(ys.get_name()+"is No new Vedio")
 
 if __name__ == "__main__":
     YD = YoutubeDownloader.YotubeDownLoader()
     SC = ScrapterController.ScrapterController()
+    setup()
 
     schedule.every(20).seconds.do(scraping)
     while True:
