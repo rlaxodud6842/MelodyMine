@@ -1,7 +1,7 @@
 import schedule
-import YoutubeDownloader
-import YoutubeScraper
-import ScrapterController
+from tools import YoutubeDownloader
+from tools import YoutubeScraper
+from tools import ScrapterController
 
 def setup():
     GET_INFO = 1
