@@ -21,7 +21,7 @@ class Scraper():
     def get_chennel(self):
         return self.chennel
 
-    def create_youtube_link(self, id_arr):
+    def create_youtube_link_arr(self, id_arr):
         youtube_link_arr = []
         for id in id_arr:
             youtube_link_arr.append('https://www.youtube.com/watch?v=' + id)
@@ -31,7 +31,7 @@ class Scraper():
         if self.is_new_video():
             new_video_ID = self.get_new_videoID()
             self.old_videos_id = self.new_videos_id
-            new_youtube_link = self.create_youtube_link(new_video_ID)
+            new_youtube_link = self.create_youtube_link_arr(new_video_ID)
             return new_youtube_link
         else:
             return []

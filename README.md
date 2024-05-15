@@ -12,14 +12,14 @@
     * `pip install -r requirements.txt`
  
 ## 실행방법
++ 1번으로 크롤링하려는 채널 정보를 1개 이상 입력하고, 2번을 입력하면 크롤링 시작하는 매커니즘입니다. 
 + `python ./main.py`
-
-+ 1 : Type chennel and name
-+ 2 : Stop type chennel and start scraping
-
+ ```
+1 : Type chennel and name
+2 : Stop type chennel and start scraping
+```
 + 1을 선택시 -> 채널 ID와 이름을 입력받는다.
-+ 2를 선택시 -> 위 선택한 채널을 기반으로 스크랩을 시작한다.
++ 2를 선택시 -> 위 입력받은 채널을 기반으로 스크랩을 시작한다.
  
 ## TODO
-+ 여러 채널 스크랩 디버깅
-+ 채널별로 폴더 만들기
++ 입력을 XML이나 JSON으로 받는것도 고려

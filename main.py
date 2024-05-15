@@ -1,6 +1,6 @@
 import schedule
-from tools import YoutubeDownloader
-import YoutubeScraper
+import YoutubeDownloader
+from tools import YoutubeScraper
 from tools import ScrapterController
 
 def setup():
@@ -19,18 +19,18 @@ def scraping():
     scrapter_list = SC.get_scrapter_list()
     for ys in scrapter_list:
         if ys.is_new_video():
-            new_url = ys.scrapping()
-            print(new_url)
-            # YD.downloading_video(new_url)
-            YD.downloading_audio(new_url)
+            new_url_arr = ys.scrapping()
+            for url in new_url_arr:
+                #YD.download_video(url,ys.get_name())
+                YD.download_audio(url,ys.get_name())
         else:
-            print(ys.get_name()+"is No new Vedio")
+            print(ys.get_name()+" is No new Videos!")
 
 if __name__ == "__main__":
     YD = YoutubeDownloader.YotubeDownLoader()
     SC = ScrapterController.ScrapterController()
     setup()
 
-    schedule.every(20).seconds.do(scraping)
+    schedule.every(1).days.do(scraping)
     while True:
         schedule.run_pending()

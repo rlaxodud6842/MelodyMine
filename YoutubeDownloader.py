@@ -12,16 +12,16 @@ class YotubeDownLoader():
             os.makedirs(downloads_path)
         return downloads_path
 
-    def download_video(self,URL):
-        DESTINATION_PATH = self.set_path()
+    def download_video(self,URL,name):
+        DESTINATION_PATH = self.set_path(name)
         ydl_opts = {
             'format': 'bestaudio/best',
             'outtmpl': DESTINATION_PATH
         }
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             ydl.download([URL])
-    def download_audio(self,URL):
-        DESTINATION_PATH = self.set_path()
+    def download_audio(self,URL,name):
+        DESTINATION_PATH = self.set_path(name)
         ydl_opts = {
             'format': 'bestaudio/best',
             'postprocessors': [{
@@ -33,12 +33,7 @@ class YotubeDownLoader():
         }
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             ydl.download([URL])
-    def set_path(self):
-        path = os.path.join(self.path, '%(title)s.%(ext)s')
+    def set_path(self,name):
+        path = os.path.join(self.path, name)
+        path = os.path.join(path, '%(title)s.%(ext)s')
         return path
-    def downloading_audio(self,url_arr):
-        for URL in url_arr:
-            self.download_audio(URL)
-    def downloading_video(self,url_arr):
-        for URL in url_arr:
-            self.download_video(URL)
