@@ -1,6 +1,6 @@
 import schedule
 from tools import YoutubeDownloader
-from tools import YoutubeScraper
+import YoutubeScraper
 from tools import ScrapterController
 
 def setup():
