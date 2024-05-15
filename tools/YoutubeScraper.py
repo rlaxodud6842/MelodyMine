@@ -2,7 +2,7 @@ import os
 import scrapetube
 
 
-class Scraper():
+class Scraper:
     def __init__(self):
         self.old_videos_id = []
         self.new_videos_id = []
@@ -24,7 +24,7 @@ class Scraper():
     def create_youtube_link_arr(self, id_arr):
         youtube_link_arr = []
         for id in id_arr:
-            youtube_link_arr.append('https://www.youtube.com/watch?v=' + id)
+            youtube_link_arr.append("https://www.youtube.com/watch?v=" + id)
         return youtube_link_arr
 
     def scrapping(self):
@@ -40,7 +40,7 @@ class Scraper():
         video_id_arr = []
         videos = scrapetube.get_channel(self.chennel, limit=5, sort_by="newest")
         for video in videos:
-            video_id_arr.append(video['videoId'])
+            video_id_arr.append(video["videoId"])
         return video_id_arr
 
     def is_new_video(self):
