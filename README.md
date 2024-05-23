@@ -12,33 +12,20 @@
 + requirements 설치
     * `pip install -r requirements.txt`
 
-## COCO128.yaml 설정
-coco128.yaml을 열어서 경로설정 해주기
-```
-names:
-  0: Aerosol
-  1: Alcohol
-  2: Awl
-  ~~~~~~~~~~~~
-  ~~~~~~~~~~~~
-  29: Thinner
-  30: ZippoOil
-test: /tld_sample/test/ #테스트 데이터 경로
-train: /tld_sample/train/ #학습 데이터 경로
-val: /tld_sample/valid/ #평가 데이터 경로
+## 실행방법
+
++ 1번으로 크롤링하려는 채널 정보를 1개 이상 입력하고, 2번을 입력하면 크롤링 시작하는 매커니즘입니다.
++ `python ./main.py`
+
+ ```
+1 : Type chennel and name
+2 : Stop type chennel and start scraping
 ```
 
-## 학습 데이터 설정
-각 폴더에 이미지랑, txt 잘 배치해놓기
-```
-data
-  ├─test
-  │  ├─images
-  │  └─labels
-  ├─train
-  │  ├─images
-  │  └─labels
-  └─valid
-      ├─images
-      └─labels
-```
++ 1을 선택시 -> 채널 ID와 이름을 입력받는다.
++ 2를 선택시 -> 위 입력받은 채널을 기반으로 스크랩을 시작한다.
+
+## TODO
+
++ 입력을 XML이나 JSON으로 받는것도 고려
++ 예외처리
