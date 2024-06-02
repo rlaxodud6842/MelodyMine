@@ -25,7 +25,13 @@
 + 1을 선택시 -> 채널 ID와 이름을 입력받는다.
 + 2를 선택시 -> 위 입력받은 채널을 기반으로 스크랩을 시작한다.
 
-## TODO
+## 리눅스 환경에서 Demon으로 backgroun에 켜놓기.
+- 1.`sudo apt-get install screen`
+- 2.`screen -S <screen/name>`
+- 3.`python3 </path/to/my_script.py>`
+- 4.`ctrl + A` -> `D` 눌러서 나오기.
 
+
+## TODO
 + 입력을 XML이나 JSON으로 받는것도 고려
 + 예외처리
