@@ -1,36 +1,23 @@
 # MelodyMine
+Youtube에 특정 채널에 올라오는 영상을 자동으로 mp3파일로 저장해주는 프로그램.
 
-**MelodyMine**는 특정 채널을 주목하고 있다가, 새로운 영상이 올라올 경우 동영상, 음원으로 저장해주는 프로그램입니다.
+## 프로젝트 목표
+Youtube 특정 채널을 계속 주시하면서 새로운 영상이 올라오면 mp3로 저장해주는것.
 
-## 설치방법
+### 기대효과 
+> 번거롭게 새로운 영상이 올라왔나 확인할 필요 줄고, 영상을 mp3로 바꾸는 번거로움도 줆.
 
-+ 파이썬 3.7이상이 요구됩니다.
-+ 가상환경 설정
-  `python3 -m venv venv` or `python -m venv venv`
-+ 가상환경 활성화
-  Windows: `./venv/Scripts/activate` or `cd ./venv/Scripts` AND `activate`
-+ requirements 설치
-    * `pip install -r requirements.txt`
+## 아키텍처
+![image](https://github.com/user-attachments/assets/44c36b04-f464-4059-8776-7113deeb19fd)
 
-## 실행방법
+## 개발 스택
+> Python<br> 
 
-+ 1번으로 크롤링하려는 채널 정보를 1개 이상 입력하고, 2번을 입력하면 크롤링 시작하는 매커니즘입니다.
-+ `python ./main.py`
-
- ```
-1 : Type chennel and name
-2 : Stop type chennel and start scraping
-```
-
-+ 1을 선택시 -> 채널 ID와 이름을 입력받는다.
-+ 2를 선택시 -> 위 입력받은 채널을 기반으로 스크랩을 시작한다.
-
-## 리눅스 환경에서 Demon으로 backgroun에 켜놓기.
-- 1.`sudo apt-get install screen`
-- 2.`screen -S <screen/name>`
-- 3.`python3 </path/to/my_script.py>`
-- 4.`ctrl + A` -> `D` 눌러서 나오기.
-
+## 핵심 기능 
+>
+> 유튜브 채널 ID를 통한 크롤링 <br>
+> MP4 to MP3 <br>
+> 새로운 영상이 올라왔는지 판단
 
 ## TODO
 + 입력을 XML이나 JSON으로 받는것도 고려
